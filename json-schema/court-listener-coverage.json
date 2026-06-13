@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/coverage.json",
+  "title": "coverage",
+  "type": "object",
+  "description": "CourtListener coverage object",
+  "properties": {
+    "annual_counts": {
+      "type": "array"
+    }
+  }
+}

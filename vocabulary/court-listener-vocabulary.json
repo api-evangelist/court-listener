@@ -1,0 +1,164 @@
+{
+  "vocabulary": "CourtListener REST API Vocabulary",
+  "version": "4.4",
+  "description": "Domain vocabulary and term definitions for the CourtListener REST API, covering US federal and state court legal data.",
+  "source": "https://www.courtlistener.com/help/api/rest/",
+  "terms": [
+    {
+      "term": "opinion",
+      "definition": "A court opinion or decision document. May be a combined opinion, majority, concurrence, dissent, or other opinion type.",
+      "type": "resource",
+      "schema": "Opinion"
+    },
+    {
+      "term": "cluster",
+      "definition": "A group of related opinions arising from a single case event (e.g., majority + concurrence + dissent from same ruling).",
+      "type": "resource",
+      "schema": "OpinionCluster"
+    },
+    {
+      "term": "docket",
+      "definition": "A PACER docket record representing a case in a US federal or state court. Contains the list of docket entries and parties.",
+      "type": "resource",
+      "schema": "Docket"
+    },
+    {
+      "term": "docket-entry",
+      "definition": "A single entry within a court docket, representing a filing, order, or other case event.",
+      "type": "resource"
+    },
+    {
+      "term": "recap-document",
+      "definition": "A PACER document retrieved via the RECAP (Reverse PACER) project, stored and freely accessible on CourtListener.",
+      "type": "resource"
+    },
+    {
+      "term": "audio",
+      "definition": "An oral argument audio recording from a federal appellate court, stored as an MP3 file.",
+      "type": "resource",
+      "schema": "Audio"
+    },
+    {
+      "term": "court",
+      "definition": "A US court record, including federal district courts, circuit courts of appeals, the Supreme Court, and state courts.",
+      "type": "resource",
+      "schema": "Court"
+    },
+    {
+      "term": "person",
+      "definition": "A judge, attorney, or other legal professional tracked in the CourtListener database.",
+      "type": "resource",
+      "schema": "Person"
+    },
+    {
+      "term": "position",
+      "definition": "A judicial or legal position held by a person, such as a district judge appointment.",
+      "type": "resource"
+    },
+    {
+      "term": "financial-disclosure",
+      "definition": "Annual financial disclosure report filed by a federal judge as required by law.",
+      "type": "resource"
+    },
+    {
+      "term": "alert",
+      "definition": "A saved search alert that notifies the user when new results matching their query are published.",
+      "type": "resource"
+    },
+    {
+      "term": "docket-alert",
+      "definition": "An alert for a specific docket that notifies the user when new filings appear.",
+      "type": "resource"
+    },
+    {
+      "term": "visualization",
+      "definition": "A citation network visualization showing the relationship between cases.",
+      "type": "resource"
+    },
+    {
+      "term": "PACER",
+      "definition": "Public Access to Court Electronic Records — the US federal courts' electronic filing and retrieval system.",
+      "type": "concept"
+    },
+    {
+      "term": "RECAP",
+      "definition": "A project that archives and freely distributes PACER documents. RECAP is PACER spelled backwards.",
+      "type": "concept"
+    },
+    {
+      "term": "citation",
+      "definition": "A reference from one court opinion to another, forming a citation network. CourtListener tracks 500M+ citations.",
+      "type": "concept"
+    },
+    {
+      "term": "citation_count",
+      "definition": "The number of times a court opinion has been cited by other opinions in the CourtListener database.",
+      "type": "property"
+    },
+    {
+      "term": "blocked",
+      "definition": "Flag indicating whether a document is blocked from appearing in search engine results (e.g., to protect privacy).",
+      "type": "property"
+    },
+    {
+      "term": "nature_of_suit",
+      "definition": "A numeric code (from PACER) indicating the nature of the civil suit, such as '440' for Other Civil Rights.",
+      "type": "property"
+    },
+    {
+      "term": "pacer_case_id",
+      "definition": "The unique case identifier used in the PACER system for a given federal court case.",
+      "type": "property"
+    },
+    {
+      "term": "resource_uri",
+      "definition": "The canonical URI for a CourtListener API resource, used to retrieve or reference the resource.",
+      "type": "property"
+    },
+    {
+      "term": "absolute_url",
+      "definition": "The relative URL path to the human-readable page for a resource on CourtListener.com.",
+      "type": "property"
+    },
+    {
+      "term": "jurisdiction",
+      "definition": "The geographic or governmental scope of a court's authority (e.g., federal, state, territory).",
+      "type": "concept",
+      "values": ["F", "FD", "FB", "FT", "FC", "S", "SA", "SS", "SAG", "C", "T", "TT", "W"]
+    },
+    {
+      "term": "opinion_type",
+      "definition": "The type or role of a court opinion within a case decision.",
+      "type": "concept",
+      "values": [
+        {"code": "010combined", "label": "Combined Opinion"},
+        {"code": "015unamimous", "label": "Unanimous"},
+        {"code": "020lead", "label": "Lead Opinion"},
+        {"code": "025plurality", "label": "Plurality"},
+        {"code": "030concurrence", "label": "Concurrence"},
+        {"code": "035concurrenceinpart", "label": "Concurrence in Part"},
+        {"code": "040dissent", "label": "Dissent"},
+        {"code": "050addendum", "label": "Addendum"},
+        {"code": "060remittitur", "label": "Remittitur"},
+        {"code": "070rehearing", "label": "Rehearing"},
+        {"code": "080onthemerits", "label": "On the Merits"},
+        {"code": "090onmotiontostrike", "label": "On Motion to Strike"}
+      ]
+    },
+    {
+      "term": "fjc_id",
+      "definition": "The Federal Judicial Center unique identifier for a federal judge.",
+      "type": "property"
+    },
+    {
+      "term": "cursor",
+      "definition": "An opaque string used for cursor-based pagination in list endpoints, replacing page-number pagination.",
+      "type": "parameter"
+    },
+    {
+      "term": "EDU tier",
+      "definition": "A free API access tier for academic/educational users, available at no cost with .edu email verification.",
+      "type": "concept"
+    }
+  ]
+}

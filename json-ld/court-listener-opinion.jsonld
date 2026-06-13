@@ -1,0 +1,18 @@
+{
+  "@context": "https://raw.githubusercontent.com/api-evangelist/court-listener/main/json-ld/court-listener-context.jsonld",
+  "@type": "Opinion",
+  "@id": "https://www.courtlistener.com/api/rest/v4/opinions/9876543/",
+  "absolute_url": "https://www.courtlistener.com/opinion/9876543/smith-v-jones/",
+  "cluster": "https://www.courtlistener.com/api/rest/v4/clusters/1234567/",
+  "author": "https://www.courtlistener.com/api/rest/v4/people/4321/",
+  "opinion_type": "010combined",
+  "date_created": "2024-03-15T12:00:00Z",
+  "date_modified": "2024-03-15T12:00:00Z",
+  "plain_text": "UNITED STATES DISTRICT COURT SOUTHERN DISTRICT OF NEW YORK...",
+  "download_url": "https://storage.courtlistener.com/pdf/2024/03/15/opinion-9876543.pdf",
+  "opinions_cited": [
+    "https://www.courtlistener.com/api/rest/v4/opinions/111111/",
+    "https://www.courtlistener.com/api/rest/v4/opinions/222222/"
+  ],
+  "blocked": false
+}

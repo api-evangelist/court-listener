@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/jurisdiction.json",
+  "title": "jurisdiction",
+  "type": "object",
+  "description": "CourtListener jurisdiction object",
+  "properties": {
+    "URL": {
+      "type": "string"
+    },
+    "citation_string": {
+      "type": "string"
+    },
+    "date_modified": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "in_use": {
+      "type": "boolean"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "position": {
+      "type": "number",
+      "format": "float"
+    },
+    "resource_uri": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string"
+    }
+  }
+}

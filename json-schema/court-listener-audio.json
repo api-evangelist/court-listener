@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/audio.json",
+  "title": "Audio",
+  "type": "object",
+  "description": "Oral argument audio recording",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "resource_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "absolute_url": {
+      "type": "string"
+    },
+    "case_name": {
+      "type": "string"
+    },
+    "case_name_short": {
+      "type": "string"
+    },
+    "docket": {
+      "type": "string",
+      "format": "uri"
+    },
+    "date_created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "date_modified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration": {
+      "type": "integer",
+      "description": "Duration in seconds"
+    },
+    "judges": {
+      "type": "string"
+    },
+    "local_path_mp3": {
+      "type": "string"
+    },
+    "download_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "sha1": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "blocked": {
+      "type": "boolean"
+    },
+    "date_blocked": {
+      "type": "string",
+      "format": "date",
+      "nullable": true
+    }
+  }
+}

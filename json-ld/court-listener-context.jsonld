@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "cl": "https://www.courtlistener.com/vocab/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+
+    "Opinion": {
+      "@id": "cl:Opinion",
+      "@type": "@id",
+      "rdfs:comment": "A court opinion or decision document published by a US court."
+    },
+    "OpinionCluster": {
+      "@id": "cl:OpinionCluster",
+      "@type": "@id",
+      "rdfs:comment": "A group of opinions from a single case ruling event."
+    },
+    "Docket": {
+      "@id": "cl:Docket",
+      "@type": "@id",
+      "rdfs:comment": "A PACER court docket record representing a case."
+    },
+    "Court": {
+      "@id": "cl:Court",
+      "@type": "@id",
+      "rdfs:comment": "A US federal or state court."
+    },
+    "Person": {
+      "@id": "cl:Person",
+      "@type": "@id",
+      "rdfs:comment": "A judge, attorney, or legal professional."
+    },
+    "Audio": {
+      "@id": "cl:Audio",
+      "@type": "@id",
+      "rdfs:comment": "An oral argument audio recording."
+    },
+
+    "id": "@id",
+    "resource_uri": {"@id": "@id", "@type": "@id"},
+    "absolute_url": {"@id": "cl:absoluteUrl", "@type": "xsd:anyURI"},
+
+    "case_name": {"@id": "schema:name"},
+    "case_name_short": {"@id": "cl:caseNameShort"},
+    "docket_number": {"@id": "cl:docketNumber"},
+    "pacer_case_id": {"@id": "cl:pacerCaseId"},
+    "nature_of_suit": {"@id": "cl:natureOfSuit"},
+
+    "court": {"@id": "cl:court", "@type": "@id"},
+    "docket": {"@id": "cl:docket", "@type": "@id"},
+    "cluster": {"@id": "cl:cluster", "@type": "@id"},
+    "author": {"@id": "cl:author", "@type": "@id"},
+
+    "date_filed": {"@id": "schema:datePublished", "@type": "xsd:date"},
+    "date_terminated": {"@id": "cl:dateTerminated", "@type": "xsd:date"},
+    "date_created": {"@id": "schema:dateCreated", "@type": "xsd:dateTime"},
+    "date_modified": {"@id": "schema:dateModified", "@type": "xsd:dateTime"},
+    "date_dob": {"@id": "schema:birthDate", "@type": "xsd:date"},
+    "date_dod": {"@id": "schema:deathDate", "@type": "xsd:date"},
+
+    "opinion_type": {"@id": "cl:opinionType"},
+    "plain_text": {"@id": "schema:text"},
+    "html": {"@id": "schema:encoding"},
+    "download_url": {"@id": "schema:contentUrl", "@type": "@id"},
+    "sha1": {"@id": "schema:sha256"},
+
+    "citation_count": {"@id": "cl:citationCount", "@type": "xsd:integer"},
+    "opinions_cited": {"@id": "cl:cites", "@type": "@id", "@container": "@set"},
+
+    "blocked": {"@id": "cl:blocked", "@type": "xsd:boolean"},
+    "date_blocked": {"@id": "cl:dateBlocked", "@type": "xsd:date"},
+
+    "full_name": {"@id": "schema:name"},
+    "short_name": {"@id": "cl:shortName"},
+    "citation_string": {"@id": "cl:citationString"},
+    "jurisdiction": {"@id": "cl:jurisdiction"},
+    "in_use": {"@id": "cl:inUse", "@type": "xsd:boolean"},
+
+    "name_first": {"@id": "schema:givenName"},
+    "name_middle": {"@id": "schema:additionalName"},
+    "name_last": {"@id": "schema:familyName"},
+    "name_suffix": {"@id": "schema:honorificSuffix"},
+    "gender": {"@id": "schema:gender"},
+    "race": {"@id": "cl:race", "@container": "@set"},
+    "fjc_id": {"@id": "cl:fjcId", "@type": "xsd:integer"},
+    "slug": {"@id": "cl:slug"},
+    "positions": {"@id": "cl:position", "@type": "@id", "@container": "@set"},
+
+    "duration": {"@id": "schema:duration", "@type": "xsd:integer"},
+    "judges": {"@id": "cl:judges"},
+    "local_path_mp3": {"@id": "cl:localPathMp3"},
+    "source": {"@id": "cl:source"},
+
+    "count": {"@id": "cl:totalCount", "@type": "xsd:integer"},
+    "next": {"@id": "cl:nextPage", "@type": "@id"},
+    "previous": {"@id": "cl:previousPage", "@type": "@id"},
+    "results": {"@id": "cl:results", "@container": "@set"}
+  }
+}

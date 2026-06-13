@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/court.json",
+  "title": "Court",
+  "type": "object",
+  "description": "US Court record",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "resource_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "pacer_court_id": {
+      "type": "integer",
+      "nullable": true
+    },
+    "fjc_court_id": {
+      "type": "string"
+    },
+    "date_modified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "in_use": {
+      "type": "boolean"
+    },
+    "has_opinion_scraper": {
+      "type": "boolean"
+    },
+    "has_oral_argument_scraper": {
+      "type": "boolean"
+    },
+    "position": {
+      "type": "number"
+    },
+    "citation_string": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "nullable": true
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "nullable": true
+    },
+    "jurisdiction": {
+      "type": "string"
+    }
+  }
+}

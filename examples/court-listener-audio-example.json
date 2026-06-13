@@ -1,0 +1,18 @@
+{
+  "id": 7654321,
+  "resource_uri": "https://www.courtlistener.com/api/rest/v4/audio/7654321/",
+  "absolute_url": "/oral-arguments/audio/7654321/smith-v-jones/",
+  "case_name": "Smith v. Jones",
+  "case_name_short": "Smith",
+  "docket": "https://www.courtlistener.com/api/rest/v4/dockets/5432100/",
+  "date_created": "2024-01-20T14:30:00Z",
+  "date_modified": "2024-01-20T14:30:00Z",
+  "duration": 3645,
+  "judges": "Doe, Smith, Johnson",
+  "local_path_mp3": "mp3/2024/01/20/oral-argument-7654321.mp3",
+  "download_url": "https://storage.courtlistener.com/mp3/2024/01/20/oral-argument-7654321.mp3",
+  "sha1": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3",
+  "source": "C",
+  "blocked": false,
+  "date_blocked": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": 5432100,
+  "resource_uri": "https://www.courtlistener.com/api/rest/v4/dockets/5432100/",
+  "docket_number": "1:23-cv-01234",
+  "case_name": "Smith v. Jones et al.",
+  "case_name_short": "Smith",
+  "court": "https://www.courtlistener.com/api/rest/v4/courts/nysd/",
+  "date_filed": "2023-01-15",
+  "date_terminated": null,
+  "date_last_filing": "2024-03-10",
+  "nature_of_suit": "440",
+  "pacer_case_id": "456789",
+  "absolute_url": "/docket/5432100/smith-v-jones/"
+}

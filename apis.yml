@@ -49,6 +49,8 @@ apis:
         url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
       - type: OpenAPI
         url: https://github.com/freelawproject/court-listener-api-definition/blob/master/court-listener-api.json
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/court-listener/refs/heads/main/openapi/court-listener-openapi.json
       - type: PythonSDK
         url: https://github.com/freelawproject/courtlistener-api-client
     contact:

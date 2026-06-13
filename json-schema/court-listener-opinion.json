@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/opinion.json",
+  "title": "Opinion",
+  "type": "object",
+  "description": "Court opinion document",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "resource_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "absolute_url": {
+      "type": "string"
+    },
+    "cluster": {
+      "type": "string",
+      "format": "uri"
+    },
+    "author": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "010combined",
+        "015unamimous",
+        "020lead",
+        "025plurality",
+        "030concurrence",
+        "035concurrenceinpart",
+        "040dissent",
+        "050addendum",
+        "060remittitur",
+        "070rehearing",
+        "080onthemerits",
+        "090onmotiontostrike"
+      ]
+    },
+    "date_created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "date_modified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "plain_text": {
+      "type": "string"
+    },
+    "html": {
+      "type": "string"
+    },
+    "html_lawbox": {
+      "type": "string"
+    },
+    "html_columbia": {
+      "type": "string"
+    },
+    "html_with_citations": {
+      "type": "string"
+    },
+    "download_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "local_path": {
+      "type": "string"
+    },
+    "opinions_cited": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  }
+}

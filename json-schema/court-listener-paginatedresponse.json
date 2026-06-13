@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/paginatedresponse.json",
+  "title": "PaginatedResponse",
+  "type": "object",
+  "description": "Standard paginated list response",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "description": "Total number of results"
+    },
+    "next": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true,
+      "description": "URL to next page"
+    },
+    "previous": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true,
+      "description": "URL to previous page"
+    },
+    "results": {
+      "type": "array",
+      "items": {}
+    }
+  }
+}

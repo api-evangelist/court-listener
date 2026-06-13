@@ -1,0 +1,22 @@
+{
+  "id": 4321,
+  "resource_uri": "https://www.courtlistener.com/api/rest/v4/people/4321/",
+  "date_created": "2015-06-01T00:00:00Z",
+  "date_modified": "2024-01-10T08:00:00Z",
+  "date_completed": "2024-01-10",
+  "fjc_id": 12345,
+  "slug": "jane-doe",
+  "name_first": "Jane",
+  "name_middle": "A.",
+  "name_last": "Doe",
+  "name_suffix": "",
+  "date_dob": "1960-04-15",
+  "date_dod": null,
+  "gender": "f",
+  "race": ["w"],
+  "religion": "",
+  "positions": [
+    "https://www.courtlistener.com/api/rest/v4/positions/9001/",
+    "https://www.courtlistener.com/api/rest/v4/positions/9002/"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/person.json",
+  "title": "Person",
+  "type": "object",
+  "description": "Judge or attorney person record",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "resource_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "date_created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "date_modified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "date_completed": {
+      "type": "string",
+      "format": "date",
+      "nullable": true
+    },
+    "fjc_id": {
+      "type": "integer",
+      "nullable": true
+    },
+    "slug": {
+      "type": "string"
+    },
+    "name_first": {
+      "type": "string"
+    },
+    "name_middle": {
+      "type": "string"
+    },
+    "name_last": {
+      "type": "string"
+    },
+    "name_suffix": {
+      "type": "string"
+    },
+    "date_dob": {
+      "type": "string",
+      "format": "date",
+      "nullable": true
+    },
+    "date_dod": {
+      "type": "string",
+      "format": "date",
+      "nullable": true
+    },
+    "gender": {
+      "type": "string"
+    },
+    "race": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "religion": {
+      "type": "string"
+    },
+    "positions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  }
+}

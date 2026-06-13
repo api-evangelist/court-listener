@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/docket.json",
+  "title": "Docket",
+  "type": "object",
+  "description": "PACER docket record",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "resource_uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "docket_number": {
+      "type": "string"
+    },
+    "case_name": {
+      "type": "string"
+    },
+    "case_name_short": {
+      "type": "string"
+    },
+    "court": {
+      "type": "string",
+      "format": "uri"
+    },
+    "date_filed": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_terminated": {
+      "type": "string",
+      "format": "date",
+      "nullable": true
+    },
+    "date_last_filing": {
+      "type": "string",
+      "format": "date",
+      "nullable": true
+    },
+    "nature_of_suit": {
+      "type": "string"
+    },
+    "pacer_case_id": {
+      "type": "string"
+    },
+    "absolute_url": {
+      "type": "string"
+    }
+  }
+}

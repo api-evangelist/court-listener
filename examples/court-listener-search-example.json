@@ -1,0 +1,23 @@
+{
+  "count": 12847,
+  "next": "https://www.courtlistener.com/api/rest/v4/search/?q=first+amendment&cursor=cD0yMDI0LTAzLTE1",
+  "previous": null,
+  "results": [
+    {
+      "id": 9876543,
+      "absolute_url": "/opinion/9876543/united-states-v-example/",
+      "case_name": "United States v. Example",
+      "case_name_short": "Example",
+      "court": "cafc",
+      "court_citation_string": "Fed. Cl.",
+      "date_filed": "2024-02-28",
+      "score": 19.432,
+      "status": "Published",
+      "citation": ["22 F.4th 100"],
+      "snippet": "...the <em>First Amendment</em> protects...",
+      "cluster_id": 1234567,
+      "docket_id": 5432100,
+      "judge": "Hon. Jane Doe"
+    }
+  ]
+}

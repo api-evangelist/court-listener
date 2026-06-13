@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.courtlistener.com/schemas/citation.json",
+  "title": "citation",
+  "type": "object",
+  "description": "CourtListener citation object",
+  "properties": {
+    "absolute_url": {
+      "type": "string"
+    },
+    "blocked": {
+      "type": "boolean"
+    },
+    "citation": {
+      "type": "array"
+    },
+    "case_name": {
+      "type": "string"
+    },
+    "docket_number": {
+      "type": "string"
+    },
+    "federal_cite_one": {
+      "type": "string"
+    },
+    "federal_cite_three": {
+      "type": "string"
+    },
+    "federal_cite_two": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "lexis_cite": {
+      "type": "string"
+    },
+    "neutral_cite": {
+      "type": "string"
+    },
+    "opinion_uris": {
+      "type": "array"
+    },
+    "resource_uri": {
+      "type": "string"
+    },
+    "scotus_early_cite": {
+      "type": "string"
+    },
+    "specialty_cite_one": {
+      "type": "string"
+    },
+    "state_cite_one": {
+      "type": "string"
+    },
+    "state_cite_regional": {
+      "type": "string"
+    },
+    "state_cite_three": {
+      "type": "string"
+    },
+    "state_cite_two": {
+      "type": "string"
+    },
+    "westlaw_cite": {
+      "type": "string"
+    }
+  }
+}
