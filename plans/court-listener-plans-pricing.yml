@@ -1,0 +1,120 @@
+name: CourtListener Plans and Pricing
+description: Membership-based plans for accessing the CourtListener REST API with varying rate limits and features
+provider: court-listener
+url: https://free.law/membership
+plans:
+
+  - name: Free
+    description: Free tier for individual users with basic API access and limited alerts
+    price: 0
+    currency: USD
+    billing: monthly
+    features:
+      - 5 docket alerts (plus 10 bonus with RECAP extension)
+      - Unlimited daily opinion alerts
+      - 5 daily RECAP alerts
+      - Community support
+      - Access to all REST API endpoints including PACER APIs
+    rate_limits:
+      requests_per_minute: 5
+      requests_per_hour: 50
+      requests_per_day: 125
+
+  - name: Tier 1
+    description: Entry-level paid membership with expanded rate limits and unlimited alerts
+    price: 10
+    currency: USD
+    billing: monthly
+    annual_price: 100
+    annual_currency: USD
+    features:
+      - Unlimited docket alerts
+      - Unlimited daily opinion alerts
+      - Unlimited real-time opinion alerts
+      - 10 daily RECAP alerts
+      - 5 real-time RECAP alerts
+    rate_limits:
+      requests_per_minute: 10
+      requests_per_hour: 75
+      requests_per_day: 300
+
+  - name: Tier 2
+    description: Mid-level membership with higher rate limits, merchandise credits, and expanded RECAP alerts
+    price: 25
+    currency: USD
+    billing: monthly
+    annual_price: 250
+    annual_currency: USD
+    features:
+      - Unlimited docket alerts
+      - Unlimited daily opinion alerts
+      - Unlimited real-time opinion alerts
+      - 25 daily RECAP alerts
+      - 10 real-time RECAP alerts
+      - Merchandise credits
+    rate_limits:
+      requests_per_minute: 15
+      requests_per_hour: 150
+      requests_per_day: 600
+
+  - name: Tier 3
+    description: Higher-volume membership with increased rate limits and broader RECAP coverage
+    price: 50
+    currency: USD
+    billing: monthly
+    annual_price: 500
+    annual_currency: USD
+    features:
+      - Unlimited docket alerts
+      - Unlimited daily opinion alerts
+      - Unlimited real-time opinion alerts
+      - 50 daily RECAP alerts
+      - 25 real-time RECAP alerts
+      - Merchandise credits
+    rate_limits:
+      requests_per_minute: 20
+      requests_per_hour: 250
+      requests_per_day: 1000
+
+  - name: Tier 4
+    description: Top individual tier with the highest rate limits, priority support, and maximum RECAP alerts
+    price: 100
+    currency: USD
+    billing: monthly
+    annual_price: 1000
+    annual_currency: USD
+    features:
+      - Unlimited docket alerts
+      - Unlimited daily opinion alerts
+      - Unlimited real-time opinion alerts
+      - 100 daily RECAP alerts
+      - 50 real-time RECAP alerts
+      - Merchandise credits
+      - Priority support
+    rate_limits:
+      requests_per_minute: 25
+      requests_per_hour: 300
+      requests_per_day: 1400
+
+  - name: EDU
+    description: Free membership for faculty, students, and researchers with a valid .edu email address
+    price: 0
+    currency: USD
+    billing: monthly
+    features:
+      - All Tier 1+ features for academic use
+      - Valid .edu email required
+    rate_limits:
+      requests_per_minute: 10
+      requests_per_hour: 75
+      requests_per_day: 300
+
+  - name: Group (Small)
+    description: Group membership for small organizations with up to a few users
+    price: 30
+    currency: USD
+    billing: monthly
+    features:
+      - Multi-user access
+      - Scales by organization size and tier level
+    notes: Pricing ranges from $30/month (smallest group, Tier 1) to $2,500/month (100 users, Tier 4)

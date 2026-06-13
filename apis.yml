@@ -1,0 +1,81 @@
+aid: court-listener
+name: CourtListener
+description: >
+  CourtListener is a free legal research platform operated by the Free Law Project,
+  a nonprofit organization. It provides a comprehensive REST API for accessing US court
+  opinions, dockets, oral arguments, judge biographical data, financial disclosures, and
+  citation networks from federal and state courts. The platform archives over 9 million
+  case law decisions, 500 million PACER-related items, 3.4 million minutes of oral arguments,
+  and data on 16,000+ judges. Access is available through a membership model with rate limits
+  scaling by tier; an EDU tier is free for academic users.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/court-listener/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Legal
+  - Court Data
+  - Case Law
+  - PACER
+  - Judicial
+  - Citations
+  - Oral Arguments
+  - Federal Courts
+  - State Courts
+  - Open Data
+apis:
+  - aid: court-listener:court-listener-rest-api
+    name: CourtListener REST API
+    description: >
+      REST API v4.4 providing programmatic access to US court opinions, PACER docket data,
+      judge records, financial disclosures, oral argument audio, citation lookup and network
+      analysis, search alerts, and case visualizations. Supports Token, Cookie/Session, and
+      HTTP Basic authentication. Returns JSON, HTML, or XML.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.courtlistener.com/help/api/rest/
+    baseURL: https://www.courtlistener.com/api/rest/v4/
+    tags:
+      - Legal
+      - Court Data
+      - Case Law
+      - Dockets
+      - Judges
+      - Citations
+      - Oral Arguments
+      - PACER
+    properties:
+      - type: Documentation
+        url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+      - type: OpenAPI
+        url: https://github.com/freelawproject/court-listener-api-definition/blob/master/court-listener-api.json
+      - type: PythonSDK
+        url: https://github.com/freelawproject/courtlistener-api-client
+    contact:
+      - FN: Free Law Project
+        url: https://free.law/contact/
+        email: info@free.law
+common:
+  - type: Website
+    url: https://www.courtlistener.com/
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: GitHubOrg
+    url: https://github.com/freelawproject
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/free-law-project
+  - type: Blog
+    url: https://free.law/blog/
+  - type: Pricing
+    url: https://free.law/membership
+  - type: X
+    url: https://x.com/FreeLawProject
+  - type: Plans
+    url: plans/court-listener-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/court-listener-rate-limits.yml
+  - type: FinOps
+    url: finops/court-listener-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

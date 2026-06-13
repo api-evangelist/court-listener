@@ -1,0 +1,87 @@
+name: CourtListener FinOps
+description: Financial operations guidance for managing CourtListener API costs and optimizing usage across membership tiers
+provider: court-listener
+url: https://free.law/membership
+updated: 2026-06-13
+
+cost_model:
+  type: membership-based
+  description: >
+    CourtListener uses a membership-based pricing model rather than pay-per-request.
+    All plans include flat-rate API access with rate limits that scale by tier.
+    There are no per-call charges or overage fees; exceeding rate limits results
+    in a 429 error, not additional charges.
+  billing_cycles:
+    - monthly
+    - annual
+  annual_discount: approximately 17% savings compared to monthly billing
+
+free_tier:
+  available: true
+  description: Free tier available with no credit card required; EDU tier available for .edu email holders
+  limitations:
+    - 5 requests/minute, 50/hour, 125/day
+    - 5 docket alerts
+    - 5 daily RECAP alerts
+    - No real-time alerts
+
+cost_optimization:
+
+  - strategy: Start with free tier
+    description: >
+      Evaluate API fit using the free tier before upgrading. The free tier
+      provides access to all endpoints including PACER APIs.
+
+  - strategy: Use EDU membership for academic work
+    description: >
+      Faculty, students, and researchers with a valid .edu email address can
+      access Tier 1 rate limits at no cost.
+
+  - strategy: Choose annual billing
+    description: >
+      Annual billing saves approximately 17% versus monthly billing across all tiers.
+      Tier 1: $100/yr vs $120/yr | Tier 2: $250/yr vs $300/yr |
+      Tier 3: $500/yr vs $600/yr | Tier 4: $1,000/yr vs $1,200/yr
+
+  - strategy: Batch citation lookups efficiently
+    description: >
+      The citation lookup endpoint allows up to 250 citations per request and
+      60 valid citations per minute. Batching near the per-request limit (250)
+      maximizes throughput per API call and reduces total request count.
+
+  - strategy: Use bulk data for large datasets
+    description: >
+      For bulk ingestion of court data, use CourtListener's bulk data downloads
+      or database replication instead of the REST API. This avoids rate limit
+      consumption for large one-time data pulls.
+    url: https://www.courtlistener.com/help/api/bulk-data/
+
+  - strategy: Cache API responses
+    description: >
+      Court opinions, judge data, and other historical records are largely static.
+      Caching responses locally reduces repeat API calls and stays within daily limits.
+
+  - strategy: Implement exponential backoff
+    description: >
+      When hitting 429 rate limits, use the wait_until timestamp in the response
+      to know exactly when to retry, rather than polling repeatedly.
+
+tier_selection_guide:
+  - use_case: Prototype / evaluation
+    recommended_tier: Free
+    monthly_cost: 0
+  - use_case: Individual researcher or small project
+    recommended_tier: Tier 1
+    monthly_cost: 10
+  - use_case: Active developer or legal research tool
+    recommended_tier: Tier 2
+    monthly_cost: 25
+  - use_case: Production application with moderate traffic
+    recommended_tier: Tier 3
+    monthly_cost: 50
+  - use_case: High-volume production or enterprise workload
+    recommended_tier: Tier 4
+    monthly_cost: 100
+  - use_case: Academic institution or classroom use
+    recommended_tier: EDU or Group
+    monthly_cost: 0 to varies

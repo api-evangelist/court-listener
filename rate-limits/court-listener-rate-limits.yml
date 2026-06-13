@@ -1,0 +1,83 @@
+name: CourtListener API Rate Limits
+description: Rate limits for the CourtListener REST API v4.4, applied per authenticated user using rolling windows
+provider: court-listener
+url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+updated: 2026-06-13
+
+notes:
+  - Rate limits use rolling time windows and apply concurrently across all limits
+  - Limits are enforced per authenticated user token
+  - HTTP 429 Too Many Requests is returned when limits are exceeded
+  - Weekly maintenance window is Thursday 21:00-23:59 PT
+
+tiers:
+
+  - tier: Free
+    description: Default rate limits for unauthenticated or free-tier users
+    limits:
+      - window: minute
+        requests: 5
+      - window: hour
+        requests: 50
+      - window: day
+        requests: 125
+
+  - tier: Tier 1
+    description: Rate limits for Tier 1 paid members ($10/month or $100/year)
+    limits:
+      - window: minute
+        requests: 10
+      - window: hour
+        requests: 75
+      - window: day
+        requests: 300
+
+  - tier: Tier 2
+    description: Rate limits for Tier 2 paid members ($25/month or $250/year)
+    limits:
+      - window: minute
+        requests: 15
+      - window: hour
+        requests: 150
+      - window: day
+        requests: 600
+
+  - tier: Tier 3
+    description: Rate limits for Tier 3 paid members ($50/month or $500/year)
+    limits:
+      - window: minute
+        requests: 20
+      - window: hour
+        requests: 250
+      - window: day
+        requests: 1000
+
+  - tier: Tier 4
+    description: Rate limits for Tier 4 paid members ($100/month or $1,000/year)
+    limits:
+      - window: minute
+        requests: 25
+      - window: hour
+        requests: 300
+      - window: day
+        requests: 1400
+
+citation_lookup_limits:
+  description: Additional limits specific to the citation lookup API endpoint
+  limits:
+    - type: per_request
+      citations: 250
+      note: Maximum citations per single API call; additional citations are parsed but not matched
+    - type: per_minute
+      citations: 60
+      note: Valid citations processed per minute; exceeding returns HTTP 429 with wait_until timestamp
+  recommended_batch_strategy:
+    citations_per_request: 60
+    interval: 1 minute
+    description: For large batches (300+ citations), send 60 citations per request spaced one minute apart
+
+error_responses:
+  - status: 429
+    meaning: Too Many Requests - rate limit exceeded
+    headers:
+      - wait_until: ISO-8601 timestamp indicating when the next request can be made
