@@ -8,7 +8,7 @@ description: >
   case law decisions, 500 million PACER-related items, 3.4 million minutes of oral arguments,
   and data on 16,000+ judges. Access is available through a membership model with rate limits
   scaling by tier; an EDU tier is free for academic users.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/court-listener/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -32,7 +32,7 @@ apis:
       judge records, financial disclosures, oral argument audio, citation lookup and network
       analysis, search alerts, and case visualizations. Supports Token, Cookie/Session, and
       HTTP Basic authentication. Returns JSON, HTML, or XML.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.courtlistener.com/help/api/rest/
     baseURL: https://www.courtlistener.com/api/rest/v4/
     tags:
