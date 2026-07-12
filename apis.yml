@@ -58,6 +58,10 @@ apis:
         url: https://free.law/contact/
         email: info@free.law
 common:
+  - type: DomainSecurity
+    url: security/court-listener-domain-security.yml
+  - type: Authentication
+    url: authentication/court-listener-authentication.yml
   - type: Website
     url: https://www.courtlistener.com/
   - type: Documentation

@@ -1,0 +1,29 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/court-listener-openapi.json
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - cookie
+  - header
+schemes:
+- name: tokenAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: 'Token-based authentication. Format: ''Token <your_token>'''
+  sources:
+  - openapi/court-listener-openapi.json
+- name: basicAuth
+  type: http
+  scheme: basic
+  sources:
+  - openapi/court-listener-openapi.json
+- name: cookieAuth
+  type: apiKey
+  in: cookie
+  parameter: sessionid
+  sources:
+  - openapi/court-listener-openapi.json
