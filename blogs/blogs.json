@@ -2,11 +2,11 @@
   "repo": "court-listener",
   "feeds": [
     {
-      "source": "https://free.law/blog/",
+      "source": "https://free.law/feeds/all.atom.xml",
       "feed_url": "https://free.law/feeds/all.atom.xml",
       "title": "",
-      "saved": 1,
-      "method": "discovered"
+      "saved": 0,
+      "method": "feed"
     },
     {
       "source": "https://www.linkedin.com/company/free-law-project",
@@ -16,6 +16,6 @@
       "method": "none"
     }
   ],
-  "post_count": 1,
-  "fetched": "2026-06-27T12:03:07Z"
+  "post_count": 50,
+  "fetched": "2026-07-11T11:50:51Z"
 }
