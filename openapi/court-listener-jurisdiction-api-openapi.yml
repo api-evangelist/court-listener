@@ -1,0 +1,153 @@
+openapi: 3.0.3
+info:
+  title: CourtListener REST Alerts Jurisdiction API
+  description: REST API providing programmatic access to US court opinions, PACER docket data, judge records, financial disclosures, oral argument audio, citation lookup and network analysis, search alerts, and case visualizations. Operated by the Free Law Project.
+  version: '4.4'
+  contact:
+    name: Free Law Project
+    url: https://free.law/contact/
+    email: info@free.law
+  license:
+    name: Creative Commons Attribution-ShareAlike 4.0 International
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+  termsOfService: https://free.law/terms/
+servers:
+- url: https://www.courtlistener.com/api/rest/v4
+  description: CourtListener REST API v4 (current)
+- url: https://www.courtlistener.com/api/rest/v1
+  description: CourtListener REST API v1 (legacy)
+security:
+- tokenAuth: []
+tags:
+- name: Jurisdiction
+paths:
+  /jurisdiction/:
+    get:
+      summary: Pulls jurisdictions
+      description: Provides basic information about the 350+ jurisdictions in the American court system
+      operationId: getJurisdiction
+      tags:
+      - Jurisdiction
+      parameters:
+      - name: format
+        in: query
+        description: response format for calls (XML,JSON,JSONP)
+        required: false
+        schema:
+          type: string
+      - name: fields
+        in: query
+        description: common delimited fields for return fields
+        required: false
+        schema:
+          type: string
+      - name: order_by
+        in: query
+        description: which field to order results by
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: number of records to limit response listing by (1000 max)
+        required: false
+        schema:
+          type: string
+      - name: absolute_url
+        in: query
+        description: pull the detail for an opinion
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/jurisdiction'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+components:
+  responses:
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    RateLimited:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+  schemas:
+    jurisdiction:
+      type: object
+      description: CourtListener jurisdiction object
+      properties:
+        URL:
+          type: string
+        citation_string:
+          type: string
+        date_modified:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+        full_name:
+          type: string
+        id:
+          type: string
+        in_use:
+          type: boolean
+        jurisdiction:
+          type: string
+        notes:
+          type: string
+        position:
+          type: number
+          format: float
+        resource_uri:
+          type: string
+        short_name:
+          type: string
+        start_date:
+          type: string
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token-based authentication. Format: ''Token <your_token>'''
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+externalDocs:
+  description: CourtListener API Documentation
+  url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview

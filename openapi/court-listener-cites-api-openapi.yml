@@ -1,0 +1,145 @@
+openapi: 3.0.3
+info:
+  title: CourtListener REST Alerts Cites API
+  description: REST API providing programmatic access to US court opinions, PACER docket data, judge records, financial disclosures, oral argument audio, citation lookup and network analysis, search alerts, and case visualizations. Operated by the Free Law Project.
+  version: '4.4'
+  contact:
+    name: Free Law Project
+    url: https://free.law/contact/
+    email: info@free.law
+  license:
+    name: Creative Commons Attribution-ShareAlike 4.0 International
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+  termsOfService: https://free.law/terms/
+servers:
+- url: https://www.courtlistener.com/api/rest/v4
+  description: CourtListener REST API v4 (current)
+- url: https://www.courtlistener.com/api/rest/v1
+  description: CourtListener REST API v1 (legacy)
+security:
+- tokenAuth: []
+tags:
+- name: Cites
+paths:
+  /cites/:
+    get:
+      summary: Pulls opinions that opinion cites
+      description: Provides a paginated display of the opinions that an opinion cites
+      operationId: getOpinion
+      tags:
+      - Cites
+      parameters:
+      - name: id
+        in: query
+        description: id for an opinion
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/opinion'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+components:
+  responses:
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    RateLimited:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+  schemas:
+    opinion:
+      type: object
+      description: CourtListener opinion object
+      properties:
+        absolute_url:
+          type: string
+        blocked:
+          type: boolean
+        citation:
+          type: array
+        citation_count:
+          type: integer
+        court:
+          type: string
+        date_blocked:
+          type: string
+          format: date
+        date_filed:
+          type: string
+          format: date
+        date_modified:
+          type: string
+          format: date
+        download_URL:
+          type: string
+        extracted_by_ocr:
+          type: string
+        id:
+          type: integer
+        judges:
+          type: string
+        local_path:
+          type: string
+        nature_of_suit:
+          type: string
+        pagerank:
+          type: integer
+          format: int64
+        precedential_status:
+          type: string
+        resource_uri:
+          type: string
+        sha1:
+          type: string
+        source:
+          type: string
+        time_retrieved:
+          type: string
+          format: date
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token-based authentication. Format: ''Token <your_token>'''
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+externalDocs:
+  description: CourtListener API Documentation
+  url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview

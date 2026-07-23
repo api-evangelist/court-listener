@@ -1,0 +1,230 @@
+openapi: 3.0.3
+info:
+  title: CourtListener REST Alerts Opinions API
+  description: REST API providing programmatic access to US court opinions, PACER docket data, judge records, financial disclosures, oral argument audio, citation lookup and network analysis, search alerts, and case visualizations. Operated by the Free Law Project.
+  version: '4.4'
+  contact:
+    name: Free Law Project
+    url: https://free.law/contact/
+    email: info@free.law
+  license:
+    name: Creative Commons Attribution-ShareAlike 4.0 International
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+  termsOfService: https://free.law/terms/
+servers:
+- url: https://www.courtlistener.com/api/rest/v4
+  description: CourtListener REST API v4 (current)
+- url: https://www.courtlistener.com/api/rest/v1
+  description: CourtListener REST API v1 (legacy)
+security:
+- tokenAuth: []
+tags:
+- name: Opinions
+paths:
+  /api/rest/v4/opinions/:
+    get:
+      summary: List Opinions
+      description: Court opinion documents
+      operationId: listOpinions
+      tags:
+      - Opinions
+      parameters:
+      - $ref: '#/components/parameters/format'
+      - $ref: '#/components/parameters/cursor'
+      - $ref: '#/components/parameters/order_by'
+      - name: fields
+        in: query
+        description: Comma-separated list of fields to include in the response
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Paginated list of opinions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /api/rest/v4/opinions/{id}/:
+    get:
+      summary: Retrieve Opinion
+      description: Retrieve a single opinion by ID
+      operationId: retrieveOpinion
+      tags:
+      - Opinions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Unique identifier for the opinion
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/format'
+      responses:
+        '200':
+          description: Single opinion record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opinion'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+components:
+  responses:
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    RateLimited:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+  parameters:
+    format:
+      name: format
+      in: query
+      description: Response format (json, xml, html)
+      required: false
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        - html
+    order_by:
+      name: order_by
+      in: query
+      description: Field to order results by
+      required: false
+      schema:
+        type: string
+    cursor:
+      name: cursor
+      in: query
+      description: Cursor for pagination
+      required: false
+      schema:
+        type: string
+  schemas:
+    Opinion:
+      type: object
+      description: Court opinion document
+      properties:
+        id:
+          type: integer
+        resource_uri:
+          type: string
+          format: uri
+        absolute_url:
+          type: string
+        cluster:
+          type: string
+          format: uri
+        author:
+          type: string
+          format: uri
+          nullable: true
+        type:
+          type: string
+          enum:
+          - 010combined
+          - 015unamimous
+          - 020lead
+          - 025plurality
+          - 030concurrence
+          - 035concurrenceinpart
+          - 040dissent
+          - 050addendum
+          - 060remittitur
+          - 070rehearing
+          - 080onthemerits
+          - 090onmotiontostrike
+        date_created:
+          type: string
+          format: date-time
+        date_modified:
+          type: string
+          format: date-time
+        plain_text:
+          type: string
+        html:
+          type: string
+        html_lawbox:
+          type: string
+        html_columbia:
+          type: string
+        html_with_citations:
+          type: string
+        download_url:
+          type: string
+          format: uri
+        local_path:
+          type: string
+        opinions_cited:
+          type: array
+          items:
+            type: string
+            format: uri
+    PaginatedResponse:
+      type: object
+      description: Standard paginated list response
+      properties:
+        count:
+          type: integer
+          description: Total number of results
+        next:
+          type: string
+          format: uri
+          nullable: true
+          description: URL to next page
+        previous:
+          type: string
+          format: uri
+          nullable: true
+          description: URL to previous page
+        results:
+          type: array
+          items: {}
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token-based authentication. Format: ''Token <your_token>'''
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+externalDocs:
+  description: CourtListener API Documentation
+  url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
