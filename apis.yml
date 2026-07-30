@@ -8,7 +8,20 @@ description: >
   case law decisions, 500 million PACER-related items, 3.4 million minutes of oral arguments,
   and data on 16,000+ judges. Access is available through a membership model with rate limits
   scaling by tier; an EDU tier is free for academic users.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/court-listener.png
 url: https://raw.githubusercontent.com/api-evangelist/court-listener/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -25,38 +38,301 @@ tags:
   - State Courts
   - Open Data
 apis:
-  - aid: court-listener:court-listener-rest-api
-    name: CourtListener REST API
-    description: >
-      REST API v4.4 providing programmatic access to US court opinions, PACER docket data,
-      judge records, financial disclosures, oral argument audio, citation lookup and network
-      analysis, search alerts, and case visualizations. Supports Token, Cookie/Session, and
-      HTTP Basic authentication. Returns JSON, HTML, or XML.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.courtlistener.com/help/api/rest/
-    baseURL: https://www.courtlistener.com/api/rest/v4/
-    tags:
-      - Legal
-      - Court Data
-      - Case Law
-      - Dockets
-      - Judges
-      - Citations
-      - Oral Arguments
-      - PACER
-    properties:
-      - type: Documentation
-        url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
-      - type: OpenAPI
-        url: https://github.com/freelawproject/court-listener-api-definition/blob/master/court-listener-api.json
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/court-listener/refs/heads/main/openapi/court-listener-openapi.json
-      - type: PythonSDK
-        url: https://github.com/freelawproject/courtlistener-api-client
-    contact:
-      - FN: Free Law Project
-        url: https://free.law/contact/
-        email: info@free.law
+- aid: court-listener:court-listener-alerts-api
+  name: CourtListener Alerts API
+  description: The Alerts API from CourtListener — 2 operation(s) for alerts.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Alerts
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-alerts-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-audio-api
+  name: CourtListener Audio API
+  description: The Audio API from CourtListener — 2 operation(s) for audio.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Audio
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-audio-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-citation-api
+  name: CourtListener Citation API
+  description: The Citation API from CourtListener — 1 operation(s) for citation.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Citation
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-citation-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-cited-by-api
+  name: CourtListener Cited By API
+  description: The Cited By API from CourtListener — 1 operation(s) for cited by.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Cited By
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-cited-by-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-cites-api
+  name: CourtListener Cites API
+  description: The Cites API from CourtListener — 1 operation(s) for cites.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Cites
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-cites-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-courts-api
+  name: CourtListener Courts API
+  description: The Courts API from CourtListener — 2 operation(s) for courts.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Courts
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-courts-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-coverage-api
+  name: CourtListener Coverage API
+  description: The Coverage API from CourtListener — 1 operation(s) for coverage.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Coverage
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-coverage-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-docket-alerts-api
+  name: CourtListener Docket Alerts API
+  description: The Docket Alerts API from CourtListener — 2 operation(s) for docket alerts.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Docket Alerts
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-docket-alerts-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-docket-entries-api
+  name: CourtListener Docket Entries API
+  description: The Docket Entries API from CourtListener — 2 operation(s) for docket entries.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Docket Entries
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-docket-entries-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-dockets-api
+  name: CourtListener Dockets API
+  description: The Dockets API from CourtListener — 2 operation(s) for dockets.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Dockets
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-dockets-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-financial-disclosures-api
+  name: CourtListener Financial Disclosures API
+  description: >-
+    The Financial Disclosures API from CourtListener — 2 operation(s) for financial disclosures.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Financial Disclosures
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-financial-disclosures-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-fjc-database-api
+  name: CourtListener FJC Database API
+  description: The FJC Database API from CourtListener — 2 operation(s) for fjc database.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - FJC Database
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-fjc-database-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-jurisdiction-api
+  name: CourtListener Jurisdiction API
+  description: The Jurisdiction API from CourtListener — 1 operation(s) for jurisdiction.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Jurisdiction
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-jurisdiction-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-opinion-api
+  name: CourtListener Opinion API
+  description: The Opinion API from CourtListener — 1 operation(s) for opinion.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Opinion
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-opinion-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-opinion-clusters-api
+  name: CourtListener Opinion Clusters API
+  description: The Opinion Clusters API from CourtListener — 2 operation(s) for opinion clusters.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Opinion Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-opinion-clusters-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-opinions-api
+  name: CourtListener Opinions API
+  description: The Opinions API from CourtListener — 2 operation(s) for opinions.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Opinions
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-opinions-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-people-api
+  name: CourtListener People API
+  description: The People API from CourtListener — 2 operation(s) for people.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - People
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-people-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-positions-api
+  name: CourtListener Positions API
+  description: The Positions API from CourtListener — 2 operation(s) for positions.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Positions
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-positions-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-recap-documents-api
+  name: CourtListener RECAP Documents API
+  description: The RECAP Documents API from CourtListener — 2 operation(s) for recap documents.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - RECAP Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-recap-documents-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-search-api
+  name: CourtListener Search API
+  description: The Search API from CourtListener — 3 operation(s) for search.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-search-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
+- aid: court-listener:court-listener-visualizations-api
+  name: CourtListener Visualizations API
+  description: The Visualizations API from CourtListener — 2 operation(s) for visualizations.
+  humanURL: https://www.courtlistener.com/help/api/rest/
+  baseURL: https://www.courtlistener.com/api/rest/v4/
+  tags:
+  - Visualizations
+  properties:
+  - type: OpenAPI
+    url: openapi/court-listener-visualizations-api-openapi.yml
+  - type: Documentation
+    url: https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview
+  - type: PythonSDK
+    url: https://github.com/freelawproject/courtlistener-api-client
 common:
   - type: AgenticAccess
     url: agentic-access/court-listener-agentic-access.yml
