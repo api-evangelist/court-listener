@@ -1,0 +1,552 @@
+{
+  "item": [
+    {
+      "id": "1c191f13-b7d2-47e5-9538-6b0bd8556c3c",
+      "name": "Opinion",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c7739dea-3aa7-44ba-9749-ac970cedd79f",
+          "name": "Pulls court opinions",
+          "request": {
+            "name": "Pulls court opinions",
+            "description": {
+              "content": "Returns a list of opinions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opinion",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "response format for calls (XML,JSON,JSONP)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "common delimited fields for return fields"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "which field to order results by"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "number of records to limit response listing by (1000 max)"
+                },
+                {
+                  "disabled": false,
+                  "key": "absolute_url",
+                  "value": "<string>",
+                  "description": "pull the detail for an opinion"
+                },
+                {
+                  "disabled": false,
+                  "key": "blocked",
+                  "value": "<string>",
+                  "description": "Whether the opinion should be blocked from search engines"
+                },
+                {
+                  "disabled": false,
+                  "key": "citation_count",
+                  "value": "<string>",
+                  "description": "The number of times the opinion has been cited by other opinions"
+                },
+                {
+                  "disabled": false,
+                  "key": "court",
+                  "value": "<string>",
+                  "description": "The ID of the court where the opinion was written"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_filed",
+                  "value": "<string>",
+                  "description": "The date the opinion was filed by the court"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_modified",
+                  "value": "<string>",
+                  "description": "The date and time the opinion was last modified"
+                },
+                {
+                  "disabled": false,
+                  "key": "extracted_by_ocr",
+                  "value": "<string>",
+                  "description": "Whether the text of the opinion was extracted from an image using OCR"
+                },
+                {
+                  "disabled": false,
+                  "key": "precedential_status",
+                  "value": "<string>",
+                  "description": "Whether the opinion has precedential value"
+                },
+                {
+                  "disabled": false,
+                  "key": "time_retrieved",
+                  "value": "<string>",
+                  "description": "The date and time the opinion was added to our system"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "439248b8-de97-46a5-9daf-34bcd0d9328c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opinion",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absolute_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "court",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filed",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_modified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extracted_by_ocr",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "precedential_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time_retrieved",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"absolute_url\": \"string\",\n  \"blocked\": true,\n  \"citation_count\": 9213,\n  \"court\": \"string\",\n  \"date_blocked\": \"1971-04-03\",\n  \"date_filed\": \"2010-01-18\",\n  \"date_modified\": \"1956-06-04\",\n  \"download_URL\": \"string\",\n  \"extracted_by_ocr\": \"string\",\n  \"id\": 1824,\n  \"judges\": \"string\",\n  \"local_path\": \"string\",\n  \"nature_of_suit\": \"string\",\n  \"pagerank\": 1774,\n  \"precedential_status\": \"string\",\n  \"resource_uri\": \"string\",\n  \"sha1\": \"string\",\n  \"source\": \"string\",\n  \"time_retrieved\": \"2018-09-30\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a9ae3a1e-ffcc-447f-8966-2a4c8df384b6",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opinion",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absolute_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "court",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filed",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_modified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extracted_by_ocr",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "precedential_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time_retrieved",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59ec4537-af6d-4278-a9bd-f28e07eafec7",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opinion",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absolute_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "court",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filed",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_modified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extracted_by_ocr",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "precedential_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time_retrieved",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "536c3e8e-4a43-4834-b0f3-44773540d7d8",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opinion",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absolute_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "court",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filed",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_modified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extracted_by_ocr",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "precedential_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time_retrieved",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.courtlistener.com/api/rest/v4",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "08345c5a-b0f1-42a1-97df-8eed473f7979",
+    "name": "CourtListener REST Alerts Opinion API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API providing programmatic access to US court opinions, PACER docket data, judge records, financial disclosures, oral argument audio, citation lookup and network analysis, search alerts, and case visualizations. Operated by the Free Law Project.\n\nContact Support:\n Name: Free Law Project\n Email: info@free.law",
+      "type": "text/plain"
+    }
+  }
+}

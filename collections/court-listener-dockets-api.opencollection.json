@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CourtListener REST Alerts Dockets API",
+    "version": "4.4"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dockets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Dockets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/api/rest/v4/dockets/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Response format (json, xml, html)"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for pagination"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "Field to order results by"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response"
+              }
+            ]
+          },
+          "docs": "PACER docket records"
+        },
+        {
+          "info": {
+            "name": "Retrieve Docket",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/api/rest/v4/dockets/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the docket"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Response format (json, xml, html)"
+              }
+            ]
+          },
+          "docs": "Retrieve a single docket by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

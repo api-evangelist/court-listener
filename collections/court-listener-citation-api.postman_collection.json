@@ -1,0 +1,552 @@
+{
+  "item": [
+    {
+      "id": "3d1c8287-da97-4e26-bfba-d0b512994b1c",
+      "name": "Citation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "569c3cce-246c-416d-bdec-80c976484f86",
+          "name": "Pulls citations",
+          "request": {
+            "name": "Pulls citations",
+            "description": {
+              "content": "Returns a list of citations",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "citation",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "response format for calls (XML,JSON,JSONP)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "common delimited fields for return fields"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "which field to order results by"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "number of records to limit response listing by (1000 max)"
+                },
+                {
+                  "disabled": false,
+                  "key": "absolute_url",
+                  "value": "<string>",
+                  "description": "pull the detail for an opinion"
+                },
+                {
+                  "disabled": false,
+                  "key": "blocked",
+                  "value": "<string>",
+                  "description": "Whether the opinion should be blocked from search engines"
+                },
+                {
+                  "disabled": false,
+                  "key": "citation_count",
+                  "value": "<string>",
+                  "description": "The number of times the opinion has been cited by other opinions"
+                },
+                {
+                  "disabled": false,
+                  "key": "court",
+                  "value": "<string>",
+                  "description": "The ID of the court where the opinion was written"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_filed",
+                  "value": "<string>",
+                  "description": "The date the opinion was filed by the court"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_modified",
+                  "value": "<string>",
+                  "description": "The date and time the opinion was last modified"
+                },
+                {
+                  "disabled": false,
+                  "key": "extracted_by_ocr",
+                  "value": "<string>",
+                  "description": "Whether the text of the opinion was extracted from an image using OCR"
+                },
+                {
+                  "disabled": false,
+                  "key": "precedential_status",
+                  "value": "<string>",
+                  "description": "Whether the opinion has precedential value"
+                },
+                {
+                  "disabled": false,
+                  "key": "time_retrieved",
+                  "value": "<string>",
+                  "description": "The date and time the opinion was added to our system"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9713a9d-eee7-4167-8cc9-f18c7bed2caa",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "citation",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absolute_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "court",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filed",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_modified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extracted_by_ocr",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "precedential_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time_retrieved",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9b8d612-b06b-459f-82b5-ddbe65f66aea",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "citation",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absolute_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "court",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filed",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_modified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extracted_by_ocr",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "precedential_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time_retrieved",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aeb2c308-8e43-45da-9a74-33dba0e78c58",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "citation",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absolute_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "court",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filed",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_modified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extracted_by_ocr",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "precedential_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time_retrieved",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "599b3f94-c1f5-4c03-8c3b-4b63e616bc56",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "citation",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absolute_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citation_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "court",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filed",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_modified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extracted_by_ocr",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "precedential_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time_retrieved",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.courtlistener.com/api/rest/v4",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cc178a0c-bfda-4852-8749-ec983ede009c",
+    "name": "CourtListener REST Alerts Citation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API providing programmatic access to US court opinions, PACER docket data, judge records, financial disclosures, oral argument audio, citation lookup and network analysis, search alerts, and case visualizations. Operated by the Free Law Project.\n\nContact Support:\n Name: Free Law Project\n Email: info@free.law",
+      "type": "text/plain"
+    }
+  }
+}

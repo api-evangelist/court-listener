@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CourtListener REST Alerts Docket Alerts API",
+    "version": "4.4"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Docket Alerts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Docket Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/api/rest/v4/docket-alerts/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Response format (json, xml, html)"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for pagination"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "Field to order results by"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response"
+              }
+            ]
+          },
+          "docs": "Alerts for specific docket updates"
+        },
+        {
+          "info": {
+            "name": "Retrieve Docket Alert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/api/rest/v4/docket-alerts/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the docket alert"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Response format (json, xml, html)"
+              }
+            ]
+          },
+          "docs": "Retrieve a single docket alert by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

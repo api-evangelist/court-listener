@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CourtListener REST Alerts Docket Entries API",
+    "version": "4.4"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Docket Entries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Docket Entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/api/rest/v4/docket-entries/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Response format (json, xml, html)"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for pagination"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "Field to order results by"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response"
+              }
+            ]
+          },
+          "docs": "Individual docket entries"
+        },
+        {
+          "info": {
+            "name": "Retrieve Docket Entrie",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/api/rest/v4/docket-entries/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the docket entrie"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Response format (json, xml, html)"
+              }
+            ]
+          },
+          "docs": "Retrieve a single docket entrie by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

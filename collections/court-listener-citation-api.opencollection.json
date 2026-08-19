@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CourtListener REST Alerts Citation API",
+    "version": "4.4"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Citation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Pulls citations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/citation/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "response format for calls (XML,JSON,JSONP)"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "common delimited fields for return fields"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "which field to order results by"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "number of records to limit response listing by (1000 max)"
+              },
+              {
+                "name": "absolute_url",
+                "value": "",
+                "type": "query",
+                "description": "pull the detail for an opinion"
+              },
+              {
+                "name": "blocked",
+                "value": "",
+                "type": "query",
+                "description": "Whether the opinion should be blocked from search engines"
+              },
+              {
+                "name": "citation_count",
+                "value": "",
+                "type": "query",
+                "description": "The number of times the opinion has been cited by other opinions"
+              },
+              {
+                "name": "court",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the court where the opinion was written"
+              },
+              {
+                "name": "date_filed",
+                "value": "",
+                "type": "query",
+                "description": "The date the opinion was filed by the court"
+              },
+              {
+                "name": "date_modified",
+                "value": "",
+                "type": "query",
+                "description": "The date and time the opinion was last modified"
+              },
+              {
+                "name": "extracted_by_ocr",
+                "value": "",
+                "type": "query",
+                "description": "Whether the text of the opinion was extracted from an image using OCR"
+              },
+              {
+                "name": "precedential_status",
+                "value": "",
+                "type": "query",
+                "description": "Whether the opinion has precedential value"
+              },
+              {
+                "name": "time_retrieved",
+                "value": "",
+                "type": "query",
+                "description": "The date and time the opinion was added to our system"
+              }
+            ]
+          },
+          "docs": "Returns a list of citations"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

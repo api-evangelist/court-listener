@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CourtListener REST Alerts Jurisdiction API",
+    "version": "4.4"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jurisdiction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Pulls jurisdictions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/jurisdiction/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "response format for calls (XML,JSON,JSONP)"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "common delimited fields for return fields"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "which field to order results by"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "number of records to limit response listing by (1000 max)"
+              },
+              {
+                "name": "absolute_url",
+                "value": "",
+                "type": "query",
+                "description": "pull the detail for an opinion"
+              }
+            ]
+          },
+          "docs": "Provides basic information about the 350+ jurisdictions in the American court system"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

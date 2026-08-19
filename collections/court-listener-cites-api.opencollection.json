@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CourtListener REST Alerts Cites API",
+    "version": "4.4"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Pulls opinions that opinion cites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.courtlistener.com/api/rest/v4/cites/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "id for an opinion"
+              }
+            ]
+          },
+          "docs": "Provides a paginated display of the opinions that an opinion cites"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
