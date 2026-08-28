@@ -8,6 +8,18 @@ description: >
   case law decisions, 500 million PACER-related items, 3.4 million minutes of oral arguments,
   and data on 16,000+ judges. Access is available through a membership model with rate limits
   scaling by tier; an EDU tier is free for academic users.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
