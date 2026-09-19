@@ -85,6 +85,8 @@ apis:
   humanURL: https://www.courtlistener.com/help/api/rest/
   baseURL: https://www.courtlistener.com/api/rest/v4/
   tags:
+  - Citations
+  tags_raw:
   - Citation
   properties:
   - type: OpenAPI
@@ -338,6 +340,8 @@ apis:
   humanURL: https://www.courtlistener.com/help/api/rest/
   baseURL: https://www.courtlistener.com/api/rest/v4/
   tags:
+  - Visualization
+  tags_raw:
   - Visualizations
   properties:
   - type: OpenAPI
