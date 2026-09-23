@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: CourtListener REST Alerts Search API
+  title: CourtListener REST Search API
   description: REST API providing programmatic access to US court opinions, PACER docket data, judge records, financial disclosures, oral argument audio, citation lookup and network analysis, search alerts, and case visualizations. Operated by the Free Law Project.
   version: '4.4'
   contact:
@@ -129,46 +129,7 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  responses:
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-    Unauthorized:
-      description: Authentication required
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-    RateLimited:
-      description: Rate limit exceeded
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
   parameters:
-    format:
-      name: format
-      in: query
-      description: Response format (json, xml, html)
-      required: false
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        - html
     order_by:
       name: order_by
       in: query
@@ -183,6 +144,17 @@ components:
       required: false
       schema:
         type: string
+    format:
+      name: format
+      in: query
+      description: Response format (json, xml, html)
+      required: false
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        - html
   schemas:
     opinion:
       type: object
@@ -241,18 +213,48 @@ components:
           type: integer
           description: Total number of results
         next:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uri
-          nullable: true
           description: URL to next page
         previous:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uri
-          nullable: true
           description: URL to previous page
         results:
           type: array
           items: {}
+  responses:
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    RateLimited:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
   securitySchemes:
     tokenAuth:
       type: apiKey

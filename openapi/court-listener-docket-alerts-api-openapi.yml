@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: CourtListener REST Alerts Docket Alerts API
+  title: CourtListener REST Docket Alerts API
   description: REST API providing programmatic access to US court opinions, PACER docket data, judge records, financial disclosures, oral argument audio, citation lookup and network analysis, search alerts, and case visualizations. Operated by the Free Law Project.
   version: '4.4'
   contact:
@@ -78,9 +78,58 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
+  parameters:
+    order_by:
+      name: order_by
+      in: query
+      description: Field to order results by
+      required: false
+      schema:
+        type: string
+    cursor:
+      name: cursor
+      in: query
+      description: Cursor for pagination
+      required: false
+      schema:
+        type: string
+    format:
+      name: format
+      in: query
+      description: Response format (json, xml, html)
+      required: false
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        - html
+  schemas:
+    PaginatedResponse:
+      type: object
+      description: Standard paginated list response
+      properties:
+        count:
+          type: integer
+          description: Total number of results
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to next page
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to previous page
+        results:
+          type: array
+          items: {}
   responses:
-    NotFound:
-      description: Resource not found
+    Unauthorized:
+      description: Authentication required
       content:
         application/json:
           schema:
@@ -88,8 +137,8 @@ components:
             properties:
               detail:
                 type: string
-    Unauthorized:
-      description: Authentication required
+    NotFound:
+      description: Resource not found
       content:
         application/json:
           schema:
@@ -106,53 +155,6 @@ components:
             properties:
               detail:
                 type: string
-  parameters:
-    format:
-      name: format
-      in: query
-      description: Response format (json, xml, html)
-      required: false
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        - html
-    order_by:
-      name: order_by
-      in: query
-      description: Field to order results by
-      required: false
-      schema:
-        type: string
-    cursor:
-      name: cursor
-      in: query
-      description: Cursor for pagination
-      required: false
-      schema:
-        type: string
-  schemas:
-    PaginatedResponse:
-      type: object
-      description: Standard paginated list response
-      properties:
-        count:
-          type: integer
-          description: Total number of results
-        next:
-          type: string
-          format: uri
-          nullable: true
-          description: URL to next page
-        previous:
-          type: string
-          format: uri
-          nullable: true
-          description: URL to previous page
-        results:
-          type: array
-          items: {}
   securitySchemes:
     tokenAuth:
       type: apiKey

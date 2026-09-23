@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: CourtListener REST Alerts Jurisdiction API
+  title: CourtListener REST Jurisdiction API
   description: REST API providing programmatic access to US court opinions, PACER docket data, judge records, financial disclosures, oral argument audio, citation lookup and network analysis, search alerts, and case visualizations. Operated by the Free Law Project.
   version: '4.4'
   contact:
@@ -74,8 +74,8 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   responses:
-    Unauthorized:
-      description: Authentication required
+    RateLimited:
+      description: Rate limit exceeded
       content:
         application/json:
           schema:
@@ -92,8 +92,8 @@ components:
             properties:
               detail:
                 type: string
-    RateLimited:
-      description: Rate limit exceeded
+    Unauthorized:
+      description: Authentication required
       content:
         application/json:
           schema:
