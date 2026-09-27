@@ -74,8 +74,8 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   responses:
-    RateLimited:
-      description: Rate limit exceeded
+    Unauthorized:
+      description: Authentication required
       content:
         application/json:
           schema:
@@ -92,8 +92,8 @@ components:
             properties:
               detail:
                 type: string
-    Unauthorized:
-      description: Authentication required
+    RateLimited:
+      description: Rate limit exceeded
       content:
         application/json:
           schema:

@@ -129,33 +129,29 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  parameters:
-    order_by:
-      name: order_by
-      in: query
-      description: Field to order results by
-      required: false
-      schema:
-        type: string
-    cursor:
-      name: cursor
-      in: query
-      description: Cursor for pagination
-      required: false
-      schema:
-        type: string
-    format:
-      name: format
-      in: query
-      description: Response format (json, xml, html)
-      required: false
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        - html
   schemas:
+    PaginatedResponse:
+      type: object
+      description: Standard paginated list response
+      properties:
+        count:
+          type: integer
+          description: Total number of results
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to next page
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to previous page
+        results:
+          type: array
+          items: {}
     opinion:
       type: object
       description: CourtListener opinion object
@@ -205,31 +201,35 @@ components:
         time_retrieved:
           type: string
           format: date
-    PaginatedResponse:
-      type: object
-      description: Standard paginated list response
-      properties:
-        count:
-          type: integer
-          description: Total number of results
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL to next page
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL to previous page
-        results:
-          type: array
-          items: {}
+  parameters:
+    format:
+      name: format
+      in: query
+      description: Response format (json, xml, html)
+      required: false
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        - html
+    cursor:
+      name: cursor
+      in: query
+      description: Cursor for pagination
+      required: false
+      schema:
+        type: string
+    order_by:
+      name: order_by
+      in: query
+      description: Field to order results by
+      required: false
+      schema:
+        type: string
   responses:
-    Unauthorized:
-      description: Authentication required
+    NotFound:
+      description: Resource not found
       content:
         application/json:
           schema:
@@ -237,8 +237,8 @@ components:
             properties:
               detail:
                 type: string
-    NotFound:
-      description: Resource not found
+    Unauthorized:
+      description: Authentication required
       content:
         application/json:
           schema:
