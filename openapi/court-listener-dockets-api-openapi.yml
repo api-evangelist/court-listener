@@ -78,35 +78,21 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  responses:
-    Unauthorized:
-      description: Authentication required
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-    RateLimited:
-      description: Rate limit exceeded
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
   parameters:
+    order_by:
+      name: order_by
+      in: query
+      description: Field to order results by
+      required: false
+      schema:
+        type: string
+    cursor:
+      name: cursor
+      in: query
+      description: Cursor for pagination
+      required: false
+      schema:
+        type: string
     format:
       name: format
       in: query
@@ -118,21 +104,29 @@ components:
         - json
         - xml
         - html
-    cursor:
-      name: cursor
-      in: query
-      description: Cursor for pagination
-      required: false
-      schema:
-        type: string
-    order_by:
-      name: order_by
-      in: query
-      description: Field to order results by
-      required: false
-      schema:
-        type: string
   schemas:
+    PaginatedResponse:
+      type: object
+      description: Standard paginated list response
+      properties:
+        count:
+          type: integer
+          description: Total number of results
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to next page
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to previous page
+        results:
+          type: array
+          items: {}
     Docket:
       type: object
       description: PACER docket record
@@ -170,28 +164,34 @@ components:
           type: string
         absolute_url:
           type: string
-    PaginatedResponse:
-      type: object
-      description: Standard paginated list response
-      properties:
-        count:
-          type: integer
-          description: Total number of results
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL to next page
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL to previous page
-        results:
-          type: array
-          items: {}
+  responses:
+    RateLimited:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
   securitySchemes:
     tokenAuth:
       type: apiKey
