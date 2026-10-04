@@ -78,32 +78,6 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  parameters:
-    order_by:
-      name: order_by
-      in: query
-      description: Field to order results by
-      required: false
-      schema:
-        type: string
-    cursor:
-      name: cursor
-      in: query
-      description: Cursor for pagination
-      required: false
-      schema:
-        type: string
-    format:
-      name: format
-      in: query
-      description: Response format (json, xml, html)
-      required: false
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        - html
   schemas:
     PaginatedResponse:
       type: object
@@ -164,9 +138,35 @@ components:
           type: string
         absolute_url:
           type: string
+  parameters:
+    cursor:
+      name: cursor
+      in: query
+      description: Cursor for pagination
+      required: false
+      schema:
+        type: string
+    order_by:
+      name: order_by
+      in: query
+      description: Field to order results by
+      required: false
+      schema:
+        type: string
+    format:
+      name: format
+      in: query
+      description: Response format (json, xml, html)
+      required: false
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        - html
   responses:
-    RateLimited:
-      description: Rate limit exceeded
+    NotFound:
+      description: Resource not found
       content:
         application/json:
           schema:
@@ -183,8 +183,8 @@ components:
             properties:
               detail:
                 type: string
-    NotFound:
-      description: Resource not found
+    RateLimited:
+      description: Rate limit exceeded
       content:
         application/json:
           schema:

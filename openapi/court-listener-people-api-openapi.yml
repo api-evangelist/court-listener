@@ -78,55 +78,7 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  parameters:
-    order_by:
-      name: order_by
-      in: query
-      description: Field to order results by
-      required: false
-      schema:
-        type: string
-    cursor:
-      name: cursor
-      in: query
-      description: Cursor for pagination
-      required: false
-      schema:
-        type: string
-    format:
-      name: format
-      in: query
-      description: Response format (json, xml, html)
-      required: false
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        - html
   schemas:
-    PaginatedResponse:
-      type: object
-      description: Standard paginated list response
-      properties:
-        count:
-          type: integer
-          description: Total number of results
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL to next page
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL to previous page
-        results:
-          type: array
-          items: {}
     Person:
       type: object
       description: Judge or attorney person record
@@ -184,9 +136,57 @@ components:
           items:
             type: string
             format: uri
+    PaginatedResponse:
+      type: object
+      description: Standard paginated list response
+      properties:
+        count:
+          type: integer
+          description: Total number of results
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to next page
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to previous page
+        results:
+          type: array
+          items: {}
+  parameters:
+    cursor:
+      name: cursor
+      in: query
+      description: Cursor for pagination
+      required: false
+      schema:
+        type: string
+    format:
+      name: format
+      in: query
+      description: Response format (json, xml, html)
+      required: false
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        - html
+    order_by:
+      name: order_by
+      in: query
+      description: Field to order results by
+      required: false
+      schema:
+        type: string
   responses:
-    RateLimited:
-      description: Rate limit exceeded
+    NotFound:
+      description: Resource not found
       content:
         application/json:
           schema:
@@ -203,8 +203,8 @@ components:
             properties:
               detail:
                 type: string
-    NotFound:
-      description: Resource not found
+    RateLimited:
+      description: Rate limit exceeded
       content:
         application/json:
           schema:
