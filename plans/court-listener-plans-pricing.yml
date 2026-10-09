@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: CourtListener Plans and Pricing
 description: Membership-based plans for accessing the CourtListener REST API with varying rate limits and features
 provider: court-listener
@@ -118,3 +122,53 @@ plans:
       - Multi-user access
       - Scales by organization size and tier level
     notes: Pricing ranges from $30/month (smallest group, Tier 1) to $2,500/month (100 users, Tier 4)
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Tier 1
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Tier 2
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Tier 3
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Tier 4
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: EDU
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Group (Small)
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []

@@ -9,10 +9,14 @@ front_door_ai:
   final_host: www.courtlistener.com
   ownership: own
   owner: court-listener
-  shares_host_with: null
+  shares_host_with:
+  - courtlistener
   inherited_from: null
+  alias_of: null
   verdict: scored
   score: 2
+  band: 3
+  band_label: light
   host_score: 2
   density: 2.85
   words: 701
