@@ -50,8 +50,8 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   responses:
-    Unauthorized:
-      description: Authentication required
+    NotFound:
+      description: Resource not found
       content:
         application/json:
           schema:
@@ -59,8 +59,8 @@ components:
             properties:
               detail:
                 type: string
-    NotFound:
-      description: Resource not found
+    Unauthorized:
+      description: Authentication required
       content:
         application/json:
           schema:

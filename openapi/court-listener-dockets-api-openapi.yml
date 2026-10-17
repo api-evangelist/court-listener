@@ -78,6 +78,34 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
+  responses:
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    RateLimited:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
   schemas:
     PaginatedResponse:
       type: object
@@ -164,34 +192,6 @@ components:
         - json
         - xml
         - html
-  responses:
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-    Unauthorized:
-      description: Authentication required
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-    RateLimited:
-      description: Rate limit exceeded
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
   securitySchemes:
     tokenAuth:
       type: apiKey

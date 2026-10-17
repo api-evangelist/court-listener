@@ -78,29 +78,35 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
+  responses:
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    RateLimited:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
   schemas:
-    PaginatedResponse:
-      type: object
-      description: Standard paginated list response
-      properties:
-        count:
-          type: integer
-          description: Total number of results
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL to next page
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          description: URL to previous page
-        results:
-          type: array
-          items: {}
     Opinion:
       type: object
       description: Court opinion document
@@ -161,6 +167,28 @@ components:
           items:
             type: string
             format: uri
+    PaginatedResponse:
+      type: object
+      description: Standard paginated list response
+      properties:
+        count:
+          type: integer
+          description: Total number of results
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to next page
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: URL to previous page
+        results:
+          type: array
+          items: {}
   parameters:
     cursor:
       name: cursor
@@ -187,34 +215,6 @@ components:
         - json
         - xml
         - html
-  responses:
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-    Unauthorized:
-      description: Authentication required
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-    RateLimited:
-      description: Rate limit exceeded
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
   securitySchemes:
     tokenAuth:
       type: apiKey
